@@ -5,7 +5,7 @@
                 <div class="navbar-wrapper">
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{asset('front-template/assets/images/logo/logo.svg')}}" alt="Logo" />
+                            <img src="{{asset('front-template/assets/images/logo/logo.png')}}" alt="Logo" width="65px" height="65px" style="border-radius: 50px"/>
                         </a>
                         <button class="navbar-toggler">
                             <span class="toggler-icon"> </span>
