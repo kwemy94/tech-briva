@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.layouts.app')
 
 @section('dashboard-content')
     {{-- <x-app-layout>
@@ -35,6 +35,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
+                    @if (session('status') === 'profile-updated')
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ __('Profile mise à jour!') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">{{ __('Profile Information') }}</h3>
@@ -46,7 +54,7 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">{{ __('auth.name') }} </label>
-                                    <input type="text" class="form-control" id="name"
+                                    <input type="text" class="form-control" id="name" name="name"
                                         value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
                                     <span class="mt-2" :messages="$errors - > get('name')"></span>
                                 </div>
@@ -66,32 +74,42 @@
 
                 </div>
                 <div class="col-md-6">
+                    @if (session('status') === 'password-updated')
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ __('Mot de passe mise à jour!') }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    @endif
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">{{ __('Update password') }}</h3>
                         </div>
-                        
+
                         <form method="post" action="{{ route('password.update') }}">
                             @csrf
                             @method('put')
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="current_password">{{ __('Current Password') }} </label>
-                                    <input type="password" name="current_password" class="form-control" id="current_password"
-                                        value="" required>
-                                    <span class="mt-2" :messages="$errors ->updatePassword->get('current_password')"></span>
+                                    <input type="password" name="current_password" class="form-control"
+                                        id="current_password" value="" required>
+                                    <span class="mt-2"
+                                        :messages="$errors - > updatePassword - > get('current_password')"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="password">{{ __('New Password') }} </label>
-                                    <input type="password" name="password" class="form-control" id="password"
-                                        required>
-                                    <span class="mt-2" :messages="$errors ->updatePassword->get('password')"></span>
+                                    <input type="password" name="password" class="form-control" id="password" required>
+                                    <span class="mt-2" :messages="$errors - > updatePassword - > get('password')"></span>
                                 </div>
                                 <div class="form-group">
                                     <label for="password_confirmation">{{ __('Confirm Password') }} </label>
-                                    <input type="password" name="password_confirmation" class="form-control" id="password_confirmation"
-                                        value="" required>
-                                    <span class="mt-2" :messages="$errors ->updatePassword->get('password_confirmation')"></span>
+                                    <input type="password" name="password_confirmation" class="form-control"
+                                        id="password_confirmation" value="" required>
+                                    <span class="mt-2"
+                                        :messages="$errors - > updatePassword - > get('password_confirmation')"></span>
                                 </div>
                             </div>
 
@@ -102,7 +120,7 @@
                     </div>
 
                 </div>
-                
+
             </div>
         </div>
     </section>

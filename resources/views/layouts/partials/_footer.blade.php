@@ -3,13 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="widget">
+                    <div class="navbar-brand ">
                         <a href="index.html" class="footer-logo">
-                            <img src="assets/images/logo/logo.svg" alt="logo" />
+                            <img src="{{ asset('front-template/assets/images/logo/logo.png')}}" width="60px" height="60px" style="border-radius: 50px" alt="logo" />
                         </a>
                         <p class="widget-desc">
-                            We create digital experiences for brands and companies by
-                            using technology.
+                            Briva vers le numérique...
                         </p>
                         <ul class="widget-socials">
                             <li>
