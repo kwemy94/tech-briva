@@ -1,4 +1,4 @@
-<section id="contact" class="contact">
+<section id="contact" class="contact" style="background-color: #dee2e6;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -139,21 +139,9 @@
         $('#submit_btn').click((e) => {
             e.preventDefault();
 
-            let inputs = $('.required');
-            let error = false;
+            
 
-            for (let i = 0; i < inputs.length; i++) {
-                console.log($(inputs[i]).val());
-                if ($(inputs[i]).val().trim() == '') {
-                    $(inputs[i]).addClass('error');
-                    error = true;
-                } else {
-                    $(inputs[i]).removeClass('error');
-                }
-
-            }
-
-            if (!error) {
+            if (ControlRequiredFields()) {
                 $('form').submit();
             }
             return;

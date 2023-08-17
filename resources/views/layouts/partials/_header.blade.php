@@ -25,16 +25,16 @@
                                 <li class="nav-item">
                                     <a class="menu-scroll" href="#about">About</a>
                                 </li>
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="menu-scroll" href="#faq">FAQ</a>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item">
                                     <a class="menu-scroll" href="#team">Team</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="" href="#contact">{{ __('auth.login') }}</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item"> 
                                     {{-- <div class="col-md-4"> --}}
                                     {{-- <img src="https://flagcdn.com/16x12/us.png"
                                         srcset="https://flagcdn.com/32x24/us.png 2x, https://flagcdn.com/48x36/us.png 3x"
